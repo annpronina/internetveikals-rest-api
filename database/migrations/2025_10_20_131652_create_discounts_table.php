@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->decimal('percentage', 5, 2);
             $table->timestamps();
-            $table->check('percentage <= 100');
+            // $table->check('percentage <= 100');
         });
     }
 
