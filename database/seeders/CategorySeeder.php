@@ -16,7 +16,7 @@ class CategorySeeder extends Seeder
         ];
 
         foreach ($names as $name) {
-            Category::create(['name' => $name]);
+            Category::factory()->create(['name' => $name]);
         }
     }
 }

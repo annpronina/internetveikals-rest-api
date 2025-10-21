@@ -16,7 +16,7 @@ class BrandSeeder extends Seeder
         ];
 
         foreach ($names as $name) {
-            Brand::create(['name' => $name]);
+            Brand::factory()->create(['name' => $name]);
         }
     }
 }
