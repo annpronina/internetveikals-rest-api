@@ -10,7 +10,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name')->index();
             $table->text('description');
-            $table->decimal('price', 10, 2)->index();
+            $table->decimal('price', 7, 2)->index();
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('brand_id')->constrained()->cascadeOnDelete();
             $table->foreignId('discount_id')->nullable()->constrained()->nullOnDelete();

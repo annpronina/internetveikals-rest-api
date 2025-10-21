@@ -2,16 +2,23 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Tag;
 
 class TagSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        $names = [
+            'New', 'Sale', 'Popular', 'Limited',
+            'Eco', 'Premium', 'Budget', 'Gift',
+            'Top', 'Trending', 'Exclusive', 'Hot',
+            'Classic', 'Modern', 'Essential', 'Luxury',
+            'Fast', 'Smart', 'Compact', 'Durable'
+        ];
+
+        foreach ($names as $name) {
+            Tag::create(['name' => $name]);
+        }
     }
 }
