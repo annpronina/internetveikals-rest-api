@@ -21,3 +21,4 @@ class ProductTag extends Model
 
 
 }
+    
