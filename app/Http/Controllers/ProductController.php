@@ -8,17 +8,10 @@ class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Product::with(['category', 'brand', 'discount', 'tags']);
+        $products = Product::with(['category', 'brand', 'discount', 'tags'])
+        ->paginate(50);
 
-        if ($request->has('category')) {
-            $query->where('category_id', $request->category);
-        }
-
-        if ($request->has('search')) {
-            $query->where('name', 'like', '%' . $request->search . '%');
-        }
-
-        return $query->paginate(50);
+    return $products;
     }
 
     public function show(Product $product)
